@@ -14,7 +14,7 @@ func PasswordEncryptionMiddleware() gin.HandlerFunc {
 		digest := sha256.New()                // 对密码加密
 		digest.Write([]byte(password))
 		passwordSHA := hex.EncodeToString(digest.Sum(nil))
-		context.Set("password", passwordSHA) // 重写设置密码参数
-		context.Next()                       // 放行
+		context.Set("password_sha256", passwordSHA) // 重写设置密码参数
+		context.Next()                              // 放行
 	}
 }
