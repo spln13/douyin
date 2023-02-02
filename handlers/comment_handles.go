@@ -2,10 +2,10 @@ package handlers
 
 import "github.com/gin-gonic/gin"
 
-func CommentActionHandle(c *gin.Context) {
+func CommentActionHandle(context *gin.Context) {
 
 }
 
-func GetCommentListHandle(c *gin.Context) {
+func GetCommentListHandle(context *gin.Context) {
 
 }

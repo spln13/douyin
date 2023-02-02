@@ -3,20 +3,22 @@ package routers
 import (
 	"douyin/dao"
 	"douyin/handlers"
+	"douyin/middlewares"
 	"github.com/gin-gonic/gin"
 )
 
 func InitRouters() *gin.Engine {
-	dao.InitDB()
-	server := gin.Default()
+	dao.InitDB()                                           // 初始化gorm
+	server := gin.Default()                                // 初始化gin服务器
+	server.Use(middlewares.PasswordEncryptionMiddleware()) // 注册加密中间件
 	server.Static("static", "./static")
 
 	// 配置路由组
 	userGroup := server.Group("/douyin/user")
 	{
-		userGroup.POST("/register", handlers.UserRegisterHandle) // 用户注册接口
-		userGroup.POST("/login", handlers.UserLoginHandle)       // 用户登陆接口
-		userGroup.GET("/", handlers.GetUserInfoHandle)           // 请求获取用户信息接口
+		userGroup.POST("/register", middlewares.PasswordEncryptionMiddleware(), handlers.UserRegisterHandle) // 用户注册接口
+		userGroup.POST("/login", middlewares.PasswordEncryptionMiddleware(), handlers.UserLoginHandle)       // 用户登陆接口
+		userGroup.GET("/", handlers.GetUserInfoHandle)                                                       // 请求获取用户信息接口
 	}
 	publishGroup := server.Group("/douyin/publish")
 	{

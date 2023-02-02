@@ -2,14 +2,14 @@ package handlers
 
 import "github.com/gin-gonic/gin"
 
-func UserRegisterHandle(c *gin.Context) {
+func UserRegisterHandle(context *gin.Context) {
 
 }
 
-func UserLoginHandle(c *gin.Context) {
+func UserLoginHandle(context *gin.Context) {
 
 }
 
-func GetUserInfoHandle(c *gin.Context) {
+func GetUserInfoHandle(context *gin.Context) {
 
 }
