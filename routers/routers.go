@@ -1,8 +1,12 @@
 package routers
 
-import "github.com/gin-gonic/gin"
+import (
+	"douyin/dao"
+	"github.com/gin-gonic/gin"
+)
 
 func InitRouters() *gin.Engine {
+	dao.InitDB()
 	server := gin.Default()
 	server.Static("static", "./static")
 
