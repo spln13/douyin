@@ -16,7 +16,7 @@ func InitDB() {
 	password := "spln13spln"
 	host := "127.0.0.1"
 	port := 3306
-	Dbname := "gorm"
+	Dbname := "douyin"
 	//dsn := "root:spln13spln@tcp(127.0.0.1:3306)/gorm?charset=utf8mb4&parseTime=True&loc=Local"
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local", username, password, host, port, Dbname)
 	var err error
