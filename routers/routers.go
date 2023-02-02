@@ -35,7 +35,7 @@ func InitRouters() *gin.Engine {
 	}
 	relationGroup := server.Group("/douyin/relation")
 	{
-		relationGroup.POST("/action", handlers.RelationActionhandle)        // 关注操作
+		relationGroup.POST("/action", handlers.RelationActionHandle)        // 关注操作
 		relationGroup.GET("/follow/list", handlers.GetFollowListHandle)     // 请求关注列表
 		relationGroup.GET("/follower/list", handlers.GetFollowerListHandle) // 请求粉丝列表
 		relationGroup.GET("/friend/list", handlers.GetFriendListHandle)     // 请求好友列表

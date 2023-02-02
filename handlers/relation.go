@@ -2,7 +2,7 @@ package handlers
 
 import "github.com/gin-gonic/gin"
 
-func RelationActionhandle(c *gin.Context) {
+func RelationActionHandle(c *gin.Context) {
 
 }
 

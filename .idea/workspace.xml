@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5479fe1-592a-483e-983f-eb1cf81a0fc1" name="变更" comment="增加dao">
-      <change afterPath="$PROJECT_DIR$/handlers/comment_handles.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handlers/favorite_handles.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handlers/message_handles.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handlers/publish_handles.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handlers/relation.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handlers/user_handles.go" afterDir="false" />
+    <list default="true" id="f5479fe1-592a-483e-983f-eb1cf81a0fc1" name="变更" comment="增加handle函数">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/comment.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/comment.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/init_db.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/init_db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/relation.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/relation.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routers/routers.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/routers.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +51,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="配置路由信息" />
     <MESSAGE value="增加dao" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加dao" />
+    <MESSAGE value="增加handle函数" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加handle函数" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
