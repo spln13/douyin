@@ -1,14 +1,14 @@
 package routers
 
 import (
-	"douyin/dao"
 	"douyin/handlers"
 	"douyin/middlewares"
+	"douyin/models"
 	"github.com/gin-gonic/gin"
 )
 
 func InitRouters() *gin.Engine {
-	dao.InitDB()                                           // 初始化gorm
+	models.InitDB()                                        // 初始化gorm
 	server := gin.Default()                                // 初始化gin服务器
 	server.Use(middlewares.PasswordEncryptionMiddleware()) // 注册加密中间件
 	server.Static("static", "./static")

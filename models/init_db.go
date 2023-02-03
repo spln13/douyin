@@ -1,4 +1,4 @@
-package dao
+package models
 
 import (
 	"fmt"
@@ -26,7 +26,7 @@ func InitDB() {
 	if err != nil { // 链接数据库失败，需要使用panic处理
 		log.Fatalln("db connected error", err)
 	}
-	err = _db.AutoMigrate(&UserInfo{}, &UserFollow{}, &Comment{}, &Message{}, &Video{}, &UserLike{})
+	err = _db.AutoMigrate(&UserInfo{}, &UserLogin{}, &UserFollow{}, &Comment{}, &Message{}, &Video{}, &UserLike{})
 	if err != nil {
 		log.Fatalln("db auto-migrate error", err)
 	}

@@ -4,11 +4,21 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5479fe1-592a-483e-983f-eb1cf81a0fc1" name="变更" comment="fix error">
+    <list default="true" id="f5479fe1-592a-483e-983f-eb1cf81a0fc1" name="变更" comment="commit">
+      <change afterPath="$PROJECT_DIR$/models/response.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/user_login.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/comment.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/comment.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/init_db.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/init_db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/message.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/message.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/user_follow.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user_follow.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/user_info.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user_info.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/user_like.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user_like.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/video.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/video.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/user_handles.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_handles.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/encryption.go" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/encryption.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/routers.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/routers.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,22 +41,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultGoTemplateProperty": "Go File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "go.import.settings.migrated": "true",
-    "last_opened_file_path": "/Users/linan",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "go"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/linan&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;SettingsForm&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="Go 构建.go build douyin">
     <configuration name="go build douyin" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="douyin" />
       <working_directory value="$PROJECT_DIR$" />
@@ -56,9 +73,35 @@
       <filePath value="$PROJECT_DIR$/main.go" />
       <method v="2" />
     </configuration>
+    <configuration name="douyin/middlewares 中的 TestGenerateToken" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="douyin" />
+      <working_directory value="$PROJECT_DIR$/middlewares" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="douyin/middlewares" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestGenerateToken\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="douyin/middlewares 中的 TestRandString" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="douyin" />
+      <working_directory value="$PROJECT_DIR$/middlewares" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="douyin/middlewares" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestRandString\E$" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Go 构建.go build douyin" />
+        <item itemvalue="Go 测试.douyin/middlewares 中的 TestGenerateToken" />
+        <item itemvalue="Go 测试.douyin/middlewares 中的 TestRandString" />
       </list>
     </recent_temporary>
   </component>
@@ -83,7 +126,8 @@
     <MESSAGE value="增加handle函数" />
     <MESSAGE value="增加密码加密中间件" />
     <MESSAGE value="fix error" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix error" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
