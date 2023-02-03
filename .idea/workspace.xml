@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5479fe1-592a-483e-983f-eb1cf81a0fc1" name="变更" comment="commit">
-      <change afterPath="$PROJECT_DIR$/models/response.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/user_login.go" afterDir="false" />
+    <list default="true" id="f5479fe1-592a-483e-983f-eb1cf81a0fc1" name="变更" comment="增加注册逻辑">
+      <change afterPath="$PROJECT_DIR$/middlewares/jwt.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/comment.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/comment.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/init_db.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/init_db.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/message.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/message.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/user_follow.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user_follow.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/user_info.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user_info.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/user_like.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user_like.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/video.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/video.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/user_handles.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_handles.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/routers.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/routers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user_login.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user_login.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +53,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="Go 构建.go build douyin">
+  <component name="RunManager" selected="Go 测试.douyin/models 中的 TestUserLogin_CheckUsernameUnique">
     <configuration name="go build douyin" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="douyin" />
       <working_directory value="$PROJECT_DIR$" />
@@ -97,8 +87,34 @@
       <pattern value="^\QTestRandString\E$" />
       <method v="2" />
     </configuration>
+    <configuration name="douyin/models 中的 TestUserLogin_CheckUsernameUnique" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="douyin" />
+      <working_directory value="$PROJECT_DIR$/models" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="douyin/models" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestUserLogin_CheckUsernameUnique\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="douyin/models 中的 TestUserLogin_GetPasswordTokenByUsername" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="douyin" />
+      <working_directory value="$PROJECT_DIR$/models" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="douyin/models" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestUserLogin_GetPasswordTokenByUsername\E$" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go 测试.douyin/models 中的 TestUserLogin_CheckUsernameUnique" />
+        <item itemvalue="Go 测试.douyin/models 中的 TestUserLogin_GetPasswordTokenByUsername" />
         <item itemvalue="Go 构建.go build douyin" />
         <item itemvalue="Go 测试.douyin/middlewares 中的 TestGenerateToken" />
         <item itemvalue="Go 测试.douyin/middlewares 中的 TestRandString" />
@@ -127,7 +143,8 @@
     <MESSAGE value="增加密码加密中间件" />
     <MESSAGE value="fix error" />
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="增加注册逻辑" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加注册逻辑" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

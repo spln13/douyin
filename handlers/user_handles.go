@@ -2,7 +2,6 @@ package handlers
 
 import (
 	"douyin/models"
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
@@ -32,7 +31,6 @@ func UserRegisterHandle(context *gin.Context) {
 		})
 		return
 	}
-	fmt.Println("password: ")
 	user := models.UserLogin{
 		Username:   username,
 		Password:   password,
@@ -85,6 +83,29 @@ func UserRegisterHandle(context *gin.Context) {
 }
 
 func UserLoginHandle(context *gin.Context) {
+	username := context.Query("username")
+	rawData, exists := context.Get("password_sha256")
+	password, ok := rawData.(string) // password为加密后
+	if !exists || !ok {              // 密码解析出错
+		context.JSON(http.StatusOK, RegisterResponse{
+			CommonResponseBody: models.CommonResponseBody{
+				StatusCode:    1,
+				StatusMessage: "密码解析错误",
+			},
+		})
+		return
+	}
+	user := models.QueryByUsername(username)
+	if user.Password != password {
+		context.JSON(http.StatusOK, RegisterResponse{
+			CommonResponseBody: models.CommonResponseBody{
+				StatusCode:    1,
+				StatusMessage: "密码错误",
+			},
+		})
+		return
+	}
+	user.GenerateToken() // 更新token
 
 }
 

@@ -63,6 +63,13 @@ func (u *UserLogin) SaveUser() error {
 	return err
 }
 
+// UpdateUser
+// 根据主键更新数据库中用户数据
+func (u *UserLogin) UpdateUser() error {
+	// TODO: 待完成
+	return nil
+}
+
 var signature = "douyinSignature"
 
 type Claims struct {
@@ -90,4 +97,16 @@ func (u *UserLogin) GenerateToken() {
 	}
 	u.Token = token
 	u.TokenExpirationTime = expirationTime
+}
+
+// QueryByUsername
+// 查询用户名对应的用户
+func QueryByUsername(username string) *UserLogin {
+	var user UserLogin
+	err := GetDB().Where("username = ?", username).Omit("create_time", "update_time").First(&user).Error
+	if err != nil {
+		log.Println(err)
+	}
+	log.Println(user) // TEST
+	return &user
 }
