@@ -75,7 +75,8 @@ func UserRegisterHandle(context *gin.Context) {
 	// 注册成功
 	context.JSON(http.StatusOK, RegisterResponse{
 		CommonResponseBody: models.CommonResponseBody{
-			StatusCode: 0,
+			StatusCode:    0,
+			StatusMessage: "注册成功",
 		},
 		UserID: user.ID,
 		Token:  user.Token,
@@ -105,8 +106,25 @@ func UserLoginHandle(context *gin.Context) {
 		})
 		return
 	}
-	user.GenerateToken() // 更新token
-
+	user.GenerateToken()                           // 更新token
+	if err := user.UpdateUserToken(); err != nil { // 更新token错误，重试
+		context.JSON(http.StatusOK, RegisterResponse{
+			CommonResponseBody: models.CommonResponseBody{
+				StatusCode:    1,
+				StatusMessage: "系统错误，请重试",
+			},
+		})
+		return
+	}
+	// 登录成功，返回参数
+	context.JSON(http.StatusOK, RegisterResponse{
+		CommonResponseBody: models.CommonResponseBody{
+			StatusCode:    0,
+			StatusMessage: "登录成功",
+		},
+		UserID: user.ID,
+		Token:  user.Token,
+	})
 }
 
 func GetUserInfoHandle(context *gin.Context) {

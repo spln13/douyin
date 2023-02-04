@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5479fe1-592a-483e-983f-eb1cf81a0fc1" name="变更" comment="增加注册逻辑">
-      <change afterPath="$PROJECT_DIR$/middlewares/jwt.go" afterDir="false" />
+    <list default="true" id="f5479fe1-592a-483e-983f-eb1cf81a0fc1" name="变更" comment="增加登录逻辑">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/user_handles.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_handles.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/user_login.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user_login.go" afterDir="false" />
@@ -53,7 +52,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="Go 测试.douyin/models 中的 TestUserLogin_CheckUsernameUnique">
+  <component name="RunManager" selected="Go 构建.go build douyin">
     <configuration name="go build douyin" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="douyin" />
       <working_directory value="$PROJECT_DIR$" />
@@ -113,9 +112,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go 构建.go build douyin" />
         <item itemvalue="Go 测试.douyin/models 中的 TestUserLogin_CheckUsernameUnique" />
         <item itemvalue="Go 测试.douyin/models 中的 TestUserLogin_GetPasswordTokenByUsername" />
-        <item itemvalue="Go 构建.go build douyin" />
         <item itemvalue="Go 测试.douyin/middlewares 中的 TestGenerateToken" />
         <item itemvalue="Go 测试.douyin/middlewares 中的 TestRandString" />
       </list>
@@ -144,7 +143,8 @@
     <MESSAGE value="fix error" />
     <MESSAGE value="commit" />
     <MESSAGE value="增加注册逻辑" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加注册逻辑" />
+    <MESSAGE value="增加登录逻辑" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加登录逻辑" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

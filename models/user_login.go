@@ -63,11 +63,17 @@ func (u *UserLogin) SaveUser() error {
 	return err
 }
 
-// UpdateUser
+// UpdateUserToken
 // 根据主键更新数据库中用户数据
-func (u *UserLogin) UpdateUser() error {
-	// TODO: 待完成
-	return nil
+func (u *UserLogin) UpdateUserToken() error {
+	u.UpdateTime = time.Now()
+	err := GetDB().Transaction(func(tx *gorm.DB) error {
+		if err := GetDB().Model(&u).Select("token", "update_time", "token_expiration_time").Updates(u).Error; err != nil {
+			return err
+		}
+		return nil
+	})
+	return err
 }
 
 var signature = "douyinSignature"
@@ -107,6 +113,5 @@ func QueryByUsername(username string) *UserLogin {
 	if err != nil {
 		log.Println(err)
 	}
-	log.Println(user) // TEST
 	return &user
 }
