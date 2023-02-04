@@ -4,10 +4,20 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5479fe1-592a-483e-983f-eb1cf81a0fc1" name="变更" comment="增加登录逻辑">
+    <list default="true" id="f5479fe1-592a-483e-983f-eb1cf81a0fc1" name="变更" comment="完成用户登录接口">
+      <change afterPath="$PROJECT_DIR$/service/user_info.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/user_login.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/user_handles.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_handles.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user_login.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user_login.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/jwt.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/comment.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/comment_dao.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/message.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/message_dao.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user_follow.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user_follow_dao.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user_info.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user_info_dao.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user_like.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user_like_dao.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user_login.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user_login_dao.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/video.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/video_dao.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +154,8 @@
     <MESSAGE value="commit" />
     <MESSAGE value="增加注册逻辑" />
     <MESSAGE value="增加登录逻辑" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加登录逻辑" />
+    <MESSAGE value="完成用户登录接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成用户登录接口" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

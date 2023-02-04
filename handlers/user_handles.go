@@ -2,14 +2,9 @@ package handlers
 
 import (
 	"douyin/models"
+	"douyin/service"
 	"github.com/gin-gonic/gin"
-	"log"
 	"net/http"
-	"time"
-)
-
-const (
-	MaxUsernameLength = 30
 )
 
 type RegisterResponse struct {
@@ -31,14 +26,8 @@ func UserRegisterHandle(context *gin.Context) {
 		})
 		return
 	}
-	user := models.UserLogin{
-		Username:   username,
-		Password:   password,
-		CreateTime: time.Now(),
-		UpdateTime: time.Now(),
-	}
-	err := user.CheckParamValid(MaxUsernameLength) // 检查用户名是否符合规范
-	if err != nil {                                // 出错
+	UserRegisterFlow := service.NewUserRegisterLoginFlow(username, password)
+	if err := UserRegisterFlow.DoRegister(); err != nil { // 出错
 		context.JSON(http.StatusOK, RegisterResponse{
 			CommonResponseBody: models.CommonResponseBody{
 				StatusCode:    2,
@@ -47,39 +36,15 @@ func UserRegisterHandle(context *gin.Context) {
 		})
 		return
 	}
-	ok = user.CheckUsernameUnique() // 检查该用户名是否唯一
-	if !ok {
-		context.JSON(http.StatusOK, RegisterResponse{
-			CommonResponseBody: models.CommonResponseBody{
-				StatusCode:    3,
-				StatusMessage: "用户名已经存在",
-			},
-		})
-		return
-	}
-	user.GenerateToken() // 生成token
-	if err != nil {
-		log.Println(err)
-	}
-	err = user.SaveUser()
-	if err != nil {
-		log.Println(err)
-		context.JSON(http.StatusOK, RegisterResponse{
-			CommonResponseBody: models.CommonResponseBody{
-				StatusCode:    4,
-				StatusMessage: "请重试",
-			},
-		})
-		return
-	}
+
 	// 注册成功
 	context.JSON(http.StatusOK, RegisterResponse{
 		CommonResponseBody: models.CommonResponseBody{
 			StatusCode:    0,
 			StatusMessage: "注册成功",
 		},
-		UserID: user.ID,
-		Token:  user.Token,
+		UserID: UserRegisterFlow.ID,
+		Token:  UserRegisterFlow.Token,
 	})
 }
 
@@ -96,22 +61,12 @@ func UserLoginHandle(context *gin.Context) {
 		})
 		return
 	}
-	user := models.QueryByUsername(username)
-	if user.Password != password {
+	userLoginFlow := service.NewUserRegisterLoginFlow(username, password)
+	if err := userLoginFlow.DoLogin(); err != nil {
 		context.JSON(http.StatusOK, RegisterResponse{
 			CommonResponseBody: models.CommonResponseBody{
 				StatusCode:    1,
-				StatusMessage: "密码错误",
-			},
-		})
-		return
-	}
-	user.GenerateToken()                           // 更新token
-	if err := user.UpdateUserToken(); err != nil { // 更新token错误，重试
-		context.JSON(http.StatusOK, RegisterResponse{
-			CommonResponseBody: models.CommonResponseBody{
-				StatusCode:    1,
-				StatusMessage: "系统错误，请重试",
+				StatusMessage: err.Error(),
 			},
 		})
 		return
@@ -122,8 +77,8 @@ func UserLoginHandle(context *gin.Context) {
 			StatusCode:    0,
 			StatusMessage: "登录成功",
 		},
-		UserID: user.ID,
-		Token:  user.Token,
+		UserID: userLoginFlow.ID,
+		Token:  userLoginFlow.Token,
 	})
 }
 
