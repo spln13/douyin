@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5479fe1-592a-483e-983f-eb1cf81a0fc1" name="变更" comment="增加service层，并更新登录注册接口" />
+    <list default="true" id="f5479fe1-592a-483e-983f-eb1cf81a0fc1" name="变更" comment="增加架构图">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server architecture.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/server_architecture.jpg" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -142,7 +146,8 @@
     <MESSAGE value="增加登录逻辑" />
     <MESSAGE value="完成用户登录接口" />
     <MESSAGE value="增加service层，并更新登录注册接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加service层，并更新登录注册接口" />
+    <MESSAGE value="增加架构图" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加架构图" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
