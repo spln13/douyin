@@ -36,7 +36,6 @@ func UserRegisterHandle(context *gin.Context) {
 		})
 		return
 	}
-
 	// 注册成功
 	context.JSON(http.StatusOK, RegisterResponse{
 		CommonResponseBody: models.CommonResponseBody{

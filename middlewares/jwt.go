@@ -2,75 +2,87 @@ package middlewares
 
 import (
 	"douyin/models"
-	"douyin/service"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
-	"log"
 	"net/http"
 	"time"
 )
 
-// 生成token
-var signature = "douyinSignature"
+var jwtKey = []byte("key_spln")
 
 type Claims struct {
-	ID                 int64
-	jwt.StandardClaims // jwt中标准格式,主要是设置token的过期时间
+	UserId int64
+	jwt.StandardClaims
 }
 
-// GenerateToken
-// 调用库的NewWithClaims(加密方式,载荷).SignedString(签名) 生成token
-func GenerateToken(u *service.UserRegisterLoginFlow) string {
-	nowTime := time.Now()
-	expirationTime := nowTime.Add(7 * 24 * time.Hour) // 过期时间
-	issuer := "linan"
-	claims := Claims{
-		ID: u.ID,
+// ReleaseToken 颁发token
+func ReleaseToken(user *models.UserLogin) (string, error) {
+	expirationTime := time.Now().Add(7 * 24 * time.Hour)
+	claims := &Claims{
+		UserId: user.ID,
 		StandardClaims: jwt.StandardClaims{
-			ExpiresAt: expirationTime.Unix(), // 转成纳秒
-			Issuer:    issuer,
-		},
-	}
-	// 根据签名生成token，NewWithClaims(加密方式,claims) ==》 头部，载荷，签证
-	token, err := jwt.NewWithClaims(jwt.SigningMethodHS256, claims).SignedString([]byte(signature))
+			ExpiresAt: expirationTime.Unix(),
+			IssuedAt:  time.Now().Unix(),
+			Issuer:    "linan",
+		}}
+
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+	tokenString, err := token.SignedString(jwtKey)
 	if err != nil {
-		log.Println(err)
+		return "", err
 	}
-	u.Token = token
-	return token
+	return tokenString, nil
 }
 
-// JWTMiddleware
-// 如果token无效或者是过期则终止访问，否则获取token对应的UserID调用Handles
+// ParseToken 解析token
+func ParseToken(tokenString string) (*Claims, bool) {
+	token, _ := jwt.ParseWithClaims(tokenString, &Claims{}, func(token *jwt.Token) (interface{}, error) {
+		return jwtKey, nil
+	})
+	if token != nil {
+		if key, ok := token.Claims.(*Claims); ok {
+			if token.Valid {
+				return key, true
+			} else {
+				return key, false
+			}
+		}
+	}
+	return nil, false
+}
+
 func JWTMiddleware() gin.HandlerFunc {
-	return func(context *gin.Context) {
-		token := context.Query("token")
-		if token == "" {
-			context.JSON(http.StatusOK, models.CommonResponseBody{
-				StatusCode:    1,
-				StatusMessage: "token无效",
-			})
-			context.Abort()
+	return func(c *gin.Context) {
+		tokenStr := c.Query("token")
+		if tokenStr == "" {
+			tokenStr = c.PostForm("token")
+		}
+		//用户不存在
+		if tokenStr == "" {
+			c.JSON(http.StatusOK, models.CommonResponseBody{StatusCode: 401, StatusMessage: "用户不存在"})
+			c.Abort() //阻止执行
 			return
 		}
-		user := models.QueryUserByToken(token)
-		if user.ID == 0 {
-			context.JSON(http.StatusOK, models.CommonResponseBody{
-				StatusCode:    2,
-				StatusMessage: "用户不存在",
+		//验证token
+		tokenStruck, ok := ParseToken(tokenStr)
+		if !ok {
+			c.JSON(http.StatusOK, models.CommonResponseBody{
+				StatusCode:    403,
+				StatusMessage: "token不正确",
 			})
-			context.Abort()
+			c.Abort() //阻止执行
 			return
 		}
-		if time.Now().Unix() > user.TokenExpirationTime.Unix() {
-			context.JSON(http.StatusOK, models.CommonResponseBody{
-				StatusCode:    3,
+		//token超时
+		if time.Now().Unix() > tokenStruck.ExpiresAt {
+			c.JSON(http.StatusOK, models.CommonResponseBody{
+				StatusCode:    402,
 				StatusMessage: "token过期",
 			})
-			context.Abort()
+			c.Abort() //阻止执行
 			return
 		}
-		context.Set("user_id", user.ID)
-		context.Next()
+		c.Set("user_id", tokenStruck.UserId)
+		c.Next()
 	}
 }

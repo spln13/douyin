@@ -8,13 +8,11 @@ import (
 )
 
 type UserLogin struct {
-	ID                  int64  `gorm:"primary_key"`
-	Username            string `gorm:"primary_key"`
-	Password            string
-	Token               string
-	CreateTime          time.Time
-	UpdateTime          time.Time
-	TokenExpirationTime time.Time
+	ID         int64  `gorm:"primary_key"`
+	Username   string `gorm:"primary_key"`
+	Password   string
+	CreateTime time.Time
+	UpdateTime time.Time
 }
 
 // CheckUsernameUnique
@@ -56,35 +54,11 @@ func (u *UserLogin) SaveUser() error {
 	return nil
 }
 
-// UpdateUserToken
-// 根据主键更新数据库中用户数据
-func (u *UserLogin) UpdateUserToken() error {
-	u.UpdateTime = time.Now()
-	err := GetDB().Transaction(func(tx *gorm.DB) error {
-		if err := GetDB().Model(&u).Select("token", "update_time", "token_expiration_time").Updates(u).Error; err != nil {
-			return err
-		}
-		return nil
-	})
-	return err
-}
-
 // QueryByUsername
 // 查询用户名对应的用户
 func QueryByUsername(username string) *UserLogin {
 	var user UserLogin
 	err := GetDB().Where("username = ?", username).Select("id", "password").Find(&user).Error
-	if err != nil {
-		log.Println(err)
-	}
-	return &user
-}
-
-// QueryUserByToken
-// 查询token对应的UserID和TokenExpirationTime
-func QueryUserByToken(token string) *UserLogin {
-	var user UserLogin
-	err := GetDB().Where("token = ?", token).Select("id", "token_expiration_time").Find(&user).Error
 	if err != nil {
 		log.Println(err)
 	}

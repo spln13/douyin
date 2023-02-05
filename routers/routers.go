@@ -8,10 +8,10 @@ import (
 )
 
 func InitRouters() *gin.Engine {
-	models.InitDB()                                        // 初始化gorm
-	server := gin.Default()                                // 初始化gin服务器
-	server.Use(middlewares.PasswordEncryptionMiddleware()) // 注册加密中间件
-	server.Use(middlewares.JWTMiddleware())                // 注册JWT鉴权中间件
+	models.InitDB()         // 初始化gorm
+	server := gin.Default() // 初始化gin服务器
+	//server.Use(middlewares.PasswordEncryptionMiddleware()) // 注册加密中间件
+	//server.Use(middlewares.JWTMiddleware())                // 注册JWT鉴权中间件
 	server.Static("static", "./static")
 
 	// 配置路由组
