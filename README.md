@@ -25,3 +25,5 @@
 | 聊天记录   | /douyin/message/chat/           | 未完成 |
 |            |                                 |        |
 
+![](Server architecture.jpg)
+
