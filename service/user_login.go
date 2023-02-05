@@ -4,7 +4,6 @@ import (
 	"douyin/middlewares"
 	"douyin/models"
 	"errors"
-	"time"
 )
 
 const (
@@ -33,8 +32,6 @@ func (u *UserRegisterLoginFlow) DoRegister() error {
 	if err := userLoginDAO.CheckUsernameUnique(); err != nil { // 检查用户名是否存在
 		return err
 	}
-	userLoginDAO.CreateTime = time.Now()
-	userLoginDAO.UpdateTime = time.Now()
 	if err := userLoginDAO.SaveUser(); err != nil {
 		return err
 	} //向数据库中插入用户

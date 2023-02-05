@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5479fe1-592a-483e-983f-eb1cf81a0fc1" name="变更" comment="增加JWT鉴权中间件">
-      <change afterPath="$PROJECT_DIR$/middlewares/jwt_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/relation_action.go" afterDir="false" />
+    <list default="true" id="f5479fe1-592a-483e-983f-eb1cf81a0fc1" name="变更" comment="修改JWT鉴权中间件">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/relation.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/relation_handles.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/user_handles.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_handles.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/jwt.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/jwt_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/comment_dao.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/comment_dao.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/message_dao.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/message_dao.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/user_follow_dao.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user_follow_dao.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user_info_dao.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user_info_dao.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user_like_dao.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user_like_dao.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/user_login_dao.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user_login_dao.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/routers.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/routers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/video_dao.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/video_dao.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/relation_action.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/relation_action.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/user_login.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/user_login.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +32,9 @@
   <component name="GOROOT" url="file:///usr/local/go" />
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2L8z2Gc8k4ER90GU3sMd6yqZzis" />
   <component name="ProjectViewState">
@@ -162,7 +166,8 @@
     <MESSAGE value="增加service层，并更新登录注册接口" />
     <MESSAGE value="增加架构图" />
     <MESSAGE value="增加JWT鉴权中间件" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加JWT鉴权中间件" />
+    <MESSAGE value="修改JWT鉴权中间件" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改JWT鉴权中间件" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

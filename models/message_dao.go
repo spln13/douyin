@@ -7,5 +7,6 @@ type Message struct {
 	Content    string
 	UserFromID int64
 	UserToID   int64
-	CreateTime time.Time
+	CreatedAt  time.Time
+	UpdatedAt  time.Time
 }

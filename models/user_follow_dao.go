@@ -11,7 +11,8 @@ type UserFollow struct {
 	ID             int64
 	UserFollowID   int64
 	UserFollowedID int64
-	CreateTime     time.Time
+	CreatedAt      time.Time
+	UpdatedAt      time.Time
 }
 
 // UserRecordExist
@@ -28,7 +29,6 @@ func (user *UserFollow) UserRecordExist() bool {
 }
 
 func (user *UserFollow) InsertUserFollow() error {
-	user.CreateTime = time.Now()
 	err := GetDB().Transaction(func(tx *gorm.DB) error {
 		if err := tx.Create(user).Error; err != nil {
 			return err
@@ -36,7 +36,7 @@ func (user *UserFollow) InsertUserFollow() error {
 		return nil
 	})
 	if err != nil {
-		return errors.New("系统错误，请重试")
+		return errors.New("系统错误")
 	}
 	return nil
 }
@@ -49,7 +49,7 @@ func (user *UserFollow) DeleteUserFollow() error {
 		return nil
 	})
 	if err != nil {
-		return errors.New("系统错误，请重试")
+		return errors.New("系统错误")
 	}
 	return nil
 }

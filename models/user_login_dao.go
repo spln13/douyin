@@ -8,11 +8,11 @@ import (
 )
 
 type UserLogin struct {
-	ID         int64  `gorm:"primary_key"`
-	Username   string `gorm:"primary_key"`
-	Password   string
-	CreateTime time.Time
-	UpdateTime time.Time
+	ID        int64  `gorm:"primary_key"`
+	Username  string `gorm:"primary_key"`
+	Password  string
+	CreatedAt time.Time
+	UpdatedAt time.Time
 }
 
 // CheckUsernameUnique
@@ -41,7 +41,6 @@ func (u *UserLogin) SaveUser() error {
 			UserID:        u.ID,
 			FollowCount:   0,
 			FollowerCount: 0,
-			UpdateTime:    time.Now(),
 		}
 		if err := tx.Create(userInfo).Error; err != nil {
 			return err
@@ -49,7 +48,7 @@ func (u *UserLogin) SaveUser() error {
 		return nil
 	})
 	if err != nil {
-		return errors.New("注册错误，请重试")
+		return errors.New("系统错误")
 	}
 	return nil
 }
