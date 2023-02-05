@@ -79,3 +79,14 @@ func QueryByUsername(username string) *UserLogin {
 	}
 	return &user
 }
+
+// QueryUserByToken
+// 查询token对应的UserID和TokenExpirationTime
+func QueryUserByToken(token string) *UserLogin {
+	var user UserLogin
+	err := GetDB().Where("token = ?", token).Select("id", "token_expiration_time").Find(&user).Error
+	if err != nil {
+		log.Println(err)
+	}
+	return &user
+}

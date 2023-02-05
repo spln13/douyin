@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f5479fe1-592a-483e-983f-eb1cf81a0fc1" name="变更" comment="增加架构图">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server architecture.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/server_architecture.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/jwt.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user_login_dao.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user_login_dao.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/routers.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/routers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/user_login.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/user_login.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
