@@ -9,6 +9,7 @@ import (
 type UserInfo struct {
 	ID            int64 `gorm:"primary_key"`
 	UserID        int64
+	Username      string
 	FollowCount   int64
 	FollowerCount int64
 	CreatedAt     time.Time
@@ -62,6 +63,13 @@ func (user *UserInfo) DecreaseFollowerCount() error {
 		return nil
 	})
 	if err != nil {
+		return errors.New("系统错误")
+	}
+	return nil
+}
+
+func (user *UserInfo) QueryByUserID() error {
+	if err := GetDB().Where("user_id = ?", user.UserID).Find(user).Error; err != nil {
 		return errors.New("系统错误")
 	}
 	return nil

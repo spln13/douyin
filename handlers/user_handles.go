@@ -5,12 +5,18 @@ import (
 	"douyin/service"
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"strconv"
 )
 
 type RegisterResponse struct {
 	models.CommonResponseBody
 	UserID int64  `json:"user_id"`
 	Token  string `json:"token"`
+}
+
+type UserInfoResponse struct {
+	Common   *models.CommonResponseBody
+	UserInfo *service.UserInfoFlow
 }
 
 func UserRegisterHandle(context *gin.Context) {
@@ -82,5 +88,27 @@ func UserLoginHandle(context *gin.Context) {
 }
 
 func GetUserInfoHandle(context *gin.Context) {
-
+	queryUserIdStr := context.Query("user_id")
+	queryUserId, _ := strconv.ParseInt(queryUserIdStr, 10, 64)
+	userId, ok := context.MustGet("user_id").(int64)
+	if !ok {
+		context.JSON(http.StatusOK, models.CommonResponseBody{
+			StatusCode:    1,
+			StatusMessage: "token解析错误",
+		})
+	}
+	userInfo := service.NewUserInfoFlow(queryUserId, userId)
+	if err := userInfo.Do(); err != nil {
+		context.JSON(http.StatusOK, models.CommonResponseBody{
+			StatusCode:    1,
+			StatusMessage: "token解析错误",
+		})
+	}
+	context.JSON(http.StatusOK, UserInfoResponse{
+		Common: &models.CommonResponseBody{
+			StatusCode:    0,
+			StatusMessage: "",
+		},
+		UserInfo: userInfo,
+	})
 }

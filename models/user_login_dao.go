@@ -39,6 +39,7 @@ func (u *UserLogin) SaveUser() error {
 		}
 		userInfo := &UserInfo{
 			UserID:        u.ID,
+			Username:      u.Username,
 			FollowCount:   0,
 			FollowerCount: 0,
 		}
