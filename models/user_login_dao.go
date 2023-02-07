@@ -15,8 +15,7 @@ type UserLogin struct {
 	UpdatedAt time.Time
 }
 
-// CheckUsernameUnique
-// 检查该用户名是否唯一
+// CheckUsernameUnique 检查该用户名是否唯一
 func (u *UserLogin) CheckUsernameUnique() error {
 	var user UserInfo
 	err := GetDB().Where("username = ?", u.Username).Find(&user).Error
@@ -29,8 +28,7 @@ func (u *UserLogin) CheckUsernameUnique() error {
 	return errors.New("用户名已存在")
 }
 
-// SaveUser
-// 向数据库中插入新用户，若出错则回滚
+// SaveUser 向数据库中插入新用户，若出错则回滚
 func (u *UserLogin) SaveUser() error {
 	err := GetDB().Transaction(func(tx *gorm.DB) error {
 		// 进行插入事务
@@ -54,8 +52,7 @@ func (u *UserLogin) SaveUser() error {
 	return nil
 }
 
-// QueryByUsername
-// 查询用户名对应的用户
+// QueryByUsername 查询用户名对应的用户
 func QueryByUsername(username string) *UserLogin {
 	var user UserLogin
 	err := GetDB().Where("username = ?", username).Select("id", "password").Find(&user).Error

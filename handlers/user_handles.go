@@ -96,13 +96,15 @@ func GetUserInfoHandle(context *gin.Context) {
 			StatusCode:    1,
 			StatusMessage: "token解析错误",
 		})
+		return
 	}
 	userInfo := service.NewUserInfoFlow(queryUserId, userId)
 	if err := userInfo.Do(); err != nil {
 		context.JSON(http.StatusOK, models.CommonResponseBody{
 			StatusCode:    1,
-			StatusMessage: "token解析错误",
+			StatusMessage: err.Error(),
 		})
+		return
 	}
 	context.JSON(http.StatusOK, UserInfoResponse{
 		Common: &models.CommonResponseBody{

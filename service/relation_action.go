@@ -19,8 +19,7 @@ func NewRelationActionFlow(userId int64, toUserId int64, actionType int) *Relati
 	}
 }
 
-// Do
-// 完成user_id向to_user_id关注或者取消关注
+// Do 完成user_id向to_user_id关注或者取消关注
 func (action *RelationActionFlow) Do() error {
 	if action.ActionType == 1 { // 关注操作
 		if err := action.Follow(); err != nil {

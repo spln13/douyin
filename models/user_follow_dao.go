@@ -14,8 +14,7 @@ type UserFollow struct {
 	UpdatedAt      time.Time
 }
 
-// UserRecordExist
-// 根据UserFollowID和UserFollowedID检索对应关注记录是否存在
+// UserRecordExist 根据UserFollowID和UserFollowedID检索对应关注记录是否存在
 func (user *UserFollow) UserRecordExist() bool {
 	err := GetDB().Where("user_follow_id = ? and user_followed_id = ?", user.UserFollowID, user.UserFollowedID).Select("id").Find(&user).Error
 	if err != nil {

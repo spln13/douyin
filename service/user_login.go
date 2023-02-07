@@ -41,8 +41,7 @@ func (u *UserRegisterLoginFlow) DoRegister() error {
 	return err
 }
 
-// CheckParamValid
-// 检查用户名以及密码是否符合规范
+// CheckParamValid 检查用户名以及密码是否符合规范
 func (u *UserRegisterLoginFlow) CheckParamValid(MaxUsernameLength int) error {
 	if u.Username == "" || len(u.Username) > MaxUsernameLength {
 		return errors.New("用户名长度不符合规范")
