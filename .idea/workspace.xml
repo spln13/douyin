@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5479fe1-592a-483e-983f-eb1cf81a0fc1" name="变更" comment="完成请求用户信息接口">
-      <change afterPath="$PROJECT_DIR$/config/conf.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/config.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/publish_videos.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/ffmpeg.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/video.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/publish_handles.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/publish_handles.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/user_handles.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_handles.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user_follow_dao.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user_follow_dao.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user_login_dao.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user_login_dao.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/video_dao.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/video_dao.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/relation_action.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/relation_action.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/user_login.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/user_login.go" afterDir="false" />
+    <list default="true" id="f5479fe1-592a-483e-983f-eb1cf81a0fc1" name="变更" comment="完成投稿接口">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +163,8 @@
     <MESSAGE value="修改JWT鉴权中间件" />
     <MESSAGE value="完成关注操作接口" />
     <MESSAGE value="完成请求用户信息接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成请求用户信息接口" />
+    <MESSAGE value="完成投稿接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成投稿接口" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
