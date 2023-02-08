@@ -7,6 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"path/filepath"
+	"strconv"
 )
 
 var (
@@ -67,7 +68,18 @@ func PublishActionHandle(context *gin.Context) {
 }
 
 func GetPublishListHandle(context *gin.Context) {
-
+	userID, ok := context.MustGet("user_id").(int64)
+	if !ok {
+		ErrorResponse(context, "token解析错误")
+		return
+	}
+	queryUserIDStr := context.Query("user_id")
+	queryUserID, _ := strconv.ParseInt(queryUserIDStr, 10, 64)
+	response := service.ResponseModel{QueryUserID: queryUserID, UserID: userID}
+	if err := response.Do(); err != nil {
+		ErrorResponse(context, "token解析错误")
+	}
+	context.JSON(http.StatusOK, response)
 }
 
 func ErrorResponse(context *gin.Context, message string) {

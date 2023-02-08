@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5479fe1-592a-483e-983f-eb1cf81a0fc1" name="变更" comment="完成投稿接口">
+      <change afterPath="$PROJECT_DIR$/service/favorite_videos.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/query_videos.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/conf.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/conf.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/favorite_handles.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/favorite_handles.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/publish_handles.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/publish_handles.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user_like_dao.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user_like_dao.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/video_dao.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/video_dao.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
