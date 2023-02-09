@@ -7,7 +7,7 @@
 
 | 接口名称   | url                             | 状态 |
 | ---------- | ------------------------------- | -- |
-| 视频流接口 | /douyin/feed/                   | 未完成 |
+| 视频流接口 | /douyin/feed/                   | 完成 |
 | 用户注册   | /douyin/user/register/          | 完成 |
 | 用户登录   | /douyin/user/login/             | 完成 |
 | 用户信息   | /douyin/user/                   | 完成 |
