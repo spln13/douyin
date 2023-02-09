@@ -11,8 +11,8 @@ type Video struct {
 	VideoUrl      string    `json:"play_url"`
 	CoverUrl      string    `json:"cover_url"`
 	Title         string    `json:"title"`
-	FavoriteCount int       `json:"favorite_count"`
-	CommentCount  int       `json:"comment_count"`
+	FavoriteCount int64     `json:"favorite_count"`
+	CommentCount  int64     `json:"comment_count"`
 	CreatedAt     time.Time `json:"-"`
 	UpdatedAt     time.Time `json:"-"`
 }
@@ -42,4 +42,8 @@ func QueryVideosByUserID(userID int64) (*[]Video, error) {
 		return nil, err
 	}
 	return videoList, nil
+}
+
+func QueryVideo(limit int, latestTime time.Time, videoList *[]*Video) error {
+	return GetDB().Where("created_at < ?", latestTime).Order("created_at asc").Limit(limit).Find(videoList).Error
 }

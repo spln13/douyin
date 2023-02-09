@@ -15,6 +15,7 @@ func InitRouters() *gin.Engine {
 	server.Static("static", "./static")
 
 	// 配置路由组
+	server.GET("/douyin/feed/", middlewares.JWTMiddleware(), handlers.FeedHandle) // 视频流接口
 	userGroup := server.Group("/douyin/user")
 	{
 		userGroup.POST("/register/", middlewares.PasswordEncryptionMiddleware(), handlers.UserRegisterHandle) // 用户注册接口

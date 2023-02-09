@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5479fe1-592a-483e-983f-eb1cf81a0fc1" name="变更" comment="完成发布列表接口、赞操作接口">
+    <list default="true" id="f5479fe1-592a-483e-983f-eb1cf81a0fc1" name="变更" comment="fix bugs">
+      <change afterPath="$PROJECT_DIR$/handlers/feed_handles.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/video_feed.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/publish_handles.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/publish_handles.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/video_dao.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/video_dao.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routers/routers.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/routers.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/query_videos.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/query_videos.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +169,8 @@
     <MESSAGE value="完成请求用户信息接口" />
     <MESSAGE value="完成投稿接口" />
     <MESSAGE value="完成发布列表接口、赞操作接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成发布列表接口、赞操作接口" />
+    <MESSAGE value="fix bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bugs" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
