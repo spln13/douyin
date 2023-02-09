@@ -33,10 +33,6 @@ type QueryUserFlow struct {
 	Username      string `json:"name"`           // 用户名称
 }
 
-func NewResponseModel(userID int64) *ResponseModel {
-	return &ResponseModel{UserID: userID}
-}
-
 func (response *ResponseModel) Do() error {
 	// 先根据QueryUserID查询作者信息
 	userInfoDAO := models.UserInfo{UserID: response.QueryUserID}

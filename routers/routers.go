@@ -23,8 +23,8 @@ func InitRouters() *gin.Engine {
 	}
 	publishGroup := server.Group("/douyin/publish")
 	{
-		publishGroup.POST("/action/", middlewares.JWTMiddleware(), handlers.PublishActionHandle) // 投稿接口
-		publishGroup.GET("/list/", middlewares.JWTMiddleware(), handlers.GetPublishListHandle)   // 请求获取发布列表
+		publishGroup.POST("/action/", middlewares.JWTMiddleware(), handlers.PublishVideoHandle) // 投稿接口
+		publishGroup.GET("/list/", middlewares.JWTMiddleware(), handlers.GetPublishListHandle)  // 请求获取发布列表
 	}
 	favoriteGroup := server.Group("/douyin/favorite")
 	{
